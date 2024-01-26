@@ -6,9 +6,9 @@ This repository contains two example files that illustrate common web security v
   - `cookieStealer.svg` - An SVG file with embedded ECMAScript that captures and sends cookies to a specified server.
 
 ## Description
-### index.php
+### index.php (optional file)
 
-This PHP script demonstrates a server-side vulnerability where user input (cookies) is logged without proper validation or sanitization. This can be exploited in a stored XSS scenario, where malicious scripts are stored on the server and executed by other users.
+This PHP script demonstrates a server-side vulnerability where user input (cookies) are logged without proper validation or sanitization. This can be exploited in a stored XSS scenario, where malicious scripts are stored on the server and executed by other users.
 
 ### cookieStealer.svg
 
@@ -27,6 +27,7 @@ An SVG file that uses embedded ECMAScript to capture and send cookies to a remot
 
 1. Start a simple php server with index.php in the webroot. 
 - `sudo php -S 0.0.0.0:<port>`
+- Note: Using the `index.php` file is completely optional, as long as you have a listener setup you should still recieve the cookies. 
 2. Modify the IP & Port in the `svg` file to contain your ip & port.
 3. Upload the `.svg` file to your vulnerable web app.
 4. Profit.
